@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+</head>
+<style>
+    h2,
+    h3,p {
+        text-align: center;
+    }
+    button{
+       margin-right: auto;
+    }
+</style>
+
+<body>
+    <form action="">
+        <fieldset>
+        <h2>Khai Bao Y Te Doi Voi Nguoi</h2>
+        <h3>DAY LA TAI LIEU QUAN TRONG NEN MONG MOI NGUOI KHAI BAO CHAN THUC NHAT CO THE</h3>
+        <label>Cua khau:<em style="color: red;">(*)</em> </label><select style="margin-left: 79px;width: 10%;">
+            <option value="volvo">Chon<span></option>
+            <option value="saab">Saab</option>
+        </select><br><br>
+        <label>Ho ten(Ten Ghi Hoa): <em style="color: red;">(*)</em> </label><input type="text"><br><br>
+        <label>Nam Sinh: <em style="color: red;">(*)</em></label><input type="number" placeholder="2000" min="1" max="3000" style="margin-left: 75px;"><span></span>
+        <label style="margin-left: 180px;">Gioi Tinh: <em style="color: red;">(*)</em></label>
+        <select name="Chon" aria-placeholder="Chon">
+            <option value="volvo" disabled selected>Chon</option>
+            <option value="saab">Nu</option>
+        </select>
+        <label style="margin-left: 180px;;">Quoc tich: <em style="color: red;">(*)</em> </label>
+        <select name="" style="width: 10%;">
+            <option value="volvo">Chon<span></option>
+            <option value="saab">Saab</option>
+        </select><br><br>
+        <label>So ho chieu hoac giay thong hanh hop phap khac: <em style="color: red;">(*)</em></label><input type="text"><br><br>
+        <label>Thong tin di lai:</label><label>Tau bay</label><input type="checkbox">
+        </label><label>Tau thuyen</label><input type="checkbox">
+        </label><label>O to</label><input type="checkbox">
+        </label><label>Khac(ghi ro):</label><br>
+        <textarea name="" id="" cols="170" rows="5"></textarea><br><br>
+        <label >So lieu phuong tien:</label><input type="text" style="margin-left: 20px;">
+        <label style="margin-left: 275px;">So ghe(neu co):</label><input type="text"><br><br>
+        <label>Ngay khoi hanh: <em style="color: red;">(*)</em> </label><input type="number" placeholder="Ngay" min="1" max="30" style="margin-left: 15px;">
+        <input type="number" placeholder="Thang" min="1" max="12">
+        <input type="number" placeholder="Nam" min="1" max="3000">
+        <label style="margin-left: 230px;">Ngay nhap canh: <em style="color: red;">(*)</em> </label><input type="number" placeholder="Ngay" min="1" max="30">
+        <input type="number" placeholder="Thang" min="1" max="12">
+        <input type="number" placeholder="Nam" min="1" max="3000"><br><br>
+        <label>Dia diem khoi hanh(tinh/quoc gia):</label><br><br>
+        <p style="font-weight:900;">Mau to khai bao y te bat buoc doi voi tat ca hanh khach nhap Viet Nam ngay 7/3/2020</p>
+        <button>Gui</button>
+    </fieldset>
+    </form>
+</body>
+
+</html>
