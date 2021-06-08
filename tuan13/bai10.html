@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>TDC Thiết kế web | Javascript</title>
+<link href="public/css/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+<style>
+
+</style>
+<body>
+    <div class="bg">
+        <img src="public/images/bg.png" width="1280">
+    </div>
+
+    <div id="cash">1800</div>
+
+    <div class="control">
+        <div id="f1" class="btn-f">
+            200
+        </div>
+        <div id="f2" class="btn-f">
+            300
+        </div>
+        <div id="f3" class="btn-f">
+            500
+        </div>
+    </div>
+
+    <div id="shelf-1">
+        <div class="pot">
+            <img src="" id="flower">
+            <img src="public/images/plate.png" class="plate">
+        </div>
+
+        <div class="pot">
+            <img src="" class="flower">
+            <img src="public/images/plate.png" class="plate">
+        </div>
+
+        <div class="pot">
+            <img src="" class="flower">
+            <img src="public/images/plate.png" class="plate">
+        </div>
+    </div>
+
+    <div id="shelf-2">
+        <div class="pot">
+            <img src="" class="flower">
+            <img src="public/images/plate.png" class="plate">
+        </div>
+
+        <div class="pot">
+            <img src="" class="flower">
+            <img src="public/images/plate.png" class="plate">
+        </div>
+
+        <div class="pot">
+            <img src="" class="flower">
+            <img src="public/images/plate.png" class="plate">
+        </div>
+    </div>
+
+<script>
+    let cash = document.getElementById('cash');
+    let tolta = 1800;
+    let flower = document.getElementById('flower');
+    
+    const btnf = document.querySelectorAll('.btn-f');
+    const pot = document.querySelectorAll('.pot');
+    const hoa = document.getElementById('flower');
+
+    btnf.forEach((course) =>{   
+        course.addEventListener('click',()=>{
+            let x = course.getAttribute('id');
+            let y = course.textContent;
+            let tinh = tolta - y;
+            cash.textContent=tinh;
+            hoa.setAttribute('src','public/images/'+x+'.png');
+        })
+    });
+    
+</script>
+
+</body>
+</html>
