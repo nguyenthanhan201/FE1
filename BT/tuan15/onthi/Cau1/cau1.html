@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Họ tên - MSSV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <style>
+        body {
+            background: #d4f5f9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Đề 1 | Frontend 1 - 2019</h1>
+        <form action="123.com" method="get" novalidate>
+            <!-- Fullname -->
+            <div class="row gx-3">
+                <label for="fullname" class="form-label">Fullname</label>
+                <input type="text" class="form-control" name="fullname" id="fullname" required
+                    pattern="[A-Z][a-z0-9]{3,}(\s?[A-Z][a-z0-9]+)*">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Help text</div>
+            </div>
+            <!-- Phone -->
+            <div class="row gx-3">
+                <label for="phone" class="form-label">Phone</label>
+                <!-- so phone bat bat so khong  -->
+                <input type="text" class="form-control" name="phone" id="phone" required pattern="[0-0]{1}[0-9]{9,}">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Help text</div>
+            </div>
+            <!-- Password -->
+            <div class="row gx-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="text" class="form-control" name="captchar" id="password" required
+                    pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\W).{5,}">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Help text</div>
+            </div>
+            <!-- Confirm Password -->
+            <div class="row gx-3">
+                <label for="repassword" class="form-label">Confirm password</label>
+                <input type="text" class="form-control" name="captchar" id="repassword" required onchange="checkPass()" pattern="">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Help text</div>
+            </div>
+            <!-- Captchar -->
+            <div class="row gx-3">
+                <label for="captchar" class="form-label">Captchar: <span class="ran-num" id="ran-num">0000</span></label>
+                <input type="text" class="form-control" name="captchar" id="captchar" required pattern="" onchange="checkCaptchar()">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Help text</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script>
+        //kiem tra form
+        const form = document.querySelector('form');
+        form.onsubmit = (e) => {
+            if (form.checkValidity() === false) {
+                //Ngăn ko cho form được gửi đi
+                e.preventDefault();//khong cho gui di
+                e.stopPropagation();//dung han tien trinh
+            }
+            form.classList.add('was-validated');
+        }; 
+        //kiem tra repass        
+        checkPass = () =>{
+        let pass = document.getElementById('password').value;
+        document.getElementById('repassword').setAttribute('pattern',pass);
+        }
+        //Captcher
+        //ham ngau nhien captchar
+        let getRandomIntInclusive = (min, max) => {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+        }
+        let cap1 = getRandomIntInclusive(0,9);
+        let cap2 = getRandomIntInclusive(0,9);
+        let cap3 = getRandomIntInclusive(0,9);
+        let cap4 = getRandomIntInclusive(0,9);
+
+        let captchar = [cap1,cap2,cap3,cap4];
+        let ranNum = document.querySelector('#ran-num');
+        ranNum.innerHTML=captchar;
+        //kiem tra captchar    
+        checkCaptchar = () =>{
+        document.getElementById('captchar').setAttribute('pattern',captchar);
+        }
+    </script>
+</body>
+
+</html>

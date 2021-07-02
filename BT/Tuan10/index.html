@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai Javascript</title>
+</head>
+<body>
+<h1 id="title">Day la tieu de</h1>
+<p>hhhhbhhg</p>
+<p>hihhhkjkjkkj</p>
+<p>ihgjgggf</p>
+
+
+<script>
+    const title = document.querySelector('#title');
+    const pl = document.querySelectorAll('p');
+    title.onmouseover = () => {
+title.innerHTML = "dsdfsadfs";
+    }
+    title.onmouseout = () => {
+        title.innerHTML = "Day la tieu de";
+    }
+        for(let i=0;i<pl.length;i++){
+            pl.innerHTML="123";
+        }
+    // pl[1].onclick = () =>{
+    //     pl[1].innerHTML="133";
+    // }    
+</script>
+    <script src="./public/index.js"></script>
+</body>
+</html>

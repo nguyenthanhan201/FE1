@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    header{
+        height: 30px;
+        background-color: black;
+        width: 100%;
+        color: white;
+    }
+    header img{
+        margin-left: 80px;
+    margin-top: -4px;
+    }
+    .logo{
+        margin-top: 70px;
+        margin-left: 600px;
+    }
+    .nav{
+        margin-left: 150px;
+        margin-top: 50px;
+    }
+    .nav a{
+        padding: 10px 47px;
+    }
+    .nav .nav-link.active{
+        background-color: black;
+        color: white;
+    }
+    .nav .nav-link{
+        color:rgb(127 127 127);
+        margin-right: 10px;
+    }
+    .nav .nav-link:hover{
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+    .col-md-6{
+        margin-top: 100px;
+        padding-left: 170px;
+    }
+    .col-md-4{
+        text-align: right;
+        margin-top: 100px;
+        
+    }
+    button:hover{
+        background-color: black;
+        color: white;
+        border: 2px solid white;
+    }
+    h1{
+        /* font-weight: lighter; */
+        color: black;
+        font-weight: 400;
+        font-size: 47px;
+        /* font-family:"Times New Roman"; */
+    }
+    p{
+        font-size: small;
+        color: #a5adc3;
+    }
+    button{
+        margin-top: 30px;
+        font-size: small;
+        padding: 5px 20px;
+        border: 1px solid black;
+    }
+    .item .col-md-4{
+        text-align: left;
+    }
+    .item .row{
+        margin-top: 100px;
+        margin-left: 250px;
+    }
+    .main-product{
+        margin-top: 100px;
+    }
+    .main-product-item-price {
+    width: 30%;
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 4px 0;
+    font-weight: 700;
+}
+
+.main-product-item-addCart {
+    width: 70%;
+    background-color: #e0e0e0;
+    border-left: 5px solid #e45d5d;
+    text-align: center;
+    font-weight: 600;
+    padding: 4px 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.main-product-item-name {
+    font-size: 14px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.main-product-item-image {
+    display: block;
+    margin: auto;
+    padding: 29px 0;
+    width: 70%;
+}
+.footer{
+    background-color: black;
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+}
+.goontop{
+    display: inline-block;
+    position: fixed;
+    right: 3%;
+    bottom: 2%;
+
+}
+.main-product .row .col-md-3{
+    margin-top: 0px;
+    margin-right: 42px;
+}
+.main-product{
+    margin-left: 174px;
+}
+</style>
+<body>
+    <header>
+<img src="./images/cart-icon.png">0 ITEM(S)
+    </header>
+    <div class="logo">
+        <img src="./images/logo.png">
+    </div>
+
+    <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#">MEN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#">WOMEN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#">KIDS</a>
+        </li>
+      </ul>
+
+      <div class="content">
+          <div class="row">
+              <div class="col-md-6">
+                  <img src="./images/slide-4.jpg" alt="">
+              </div>
+              <div class="col-md-4">
+                  <h1>FOOT BALL BOOTS</h1>
+                  <p>Stay true to your team all day, every day, game day.</p>
+                  <button>Shop Now</button>
+              </div>
+          </div>
+      </div>
+      <div class="main-product">
+        <div class="row">
+            <div class="col-md-3 ">
+                <div class="main-product-item border">
+                    <img class="main-product-item-image" src="./images/product1.jpg" alt="">
+                    <div class="main-product-item-name">Nike HYPERVENOM Phantom FG</div>
+                    <div class="d-flex mt-2">
+                        <a href="" class="main-product-item-addCart">ADD TO CART</a>
+                        <div class="main-product-item-price">$ 380</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 ">
+                <div class="main-product-item border">
+                    <img class="main-product-item-image" src="./images/product2.jpg" alt="">
+                    <div class="main-product-item-name">Nike HYPERVENOM Phantom FG</div>
+                    <div class="d-flex mt-2">
+                        <a href="" class="main-product-item-addCart">ADD TO CART</a>
+                        <div class="main-product-item-price">$ 380</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 ">
+                <div class="main-product-item border">
+                    <img class="main-product-item-image" src="./images/product3.jpg" alt="">
+                    <div class="main-product-item-name">Nike HYPERVENOM Phantom FG</div>
+                    <div class="d-flex mt-2">
+                        <a href="" class="main-product-item-addCart">ADD TO CART</a>
+                        <div class="main-product-item-price">$ 380</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        © 2021 | Nguyen Thanh An - 19211TT1501
+        <a href="#" class="goontop"><img src="./images/move-top.png"></a>
+    </div>
+    <!-- dan js vao day -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

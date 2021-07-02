@@ -1,0 +1,10 @@
+/*Viết js sao cho:
+        1. Thay đổi nội dung của thẻ li thứ 1 thành "Thay đổi HTML"
+        2. Khi click chuột vào thẻ li thứ 2, nội dung của thẻ li 
+        thứ 2 thay đổi thành "Thay đổi CSS"
+        3. Khi rê chuột vào thẻ li thứ 3, nội dung của thẻ li thứ 3 
+        thay đổi thành "Bạn đang rê chuột vào tôi", khi bỏ chuột ra khỏi thì
+        nội dung trở về như ban đầu.
+        4. Khi rê chuột vào thẻ li cuối, nội dung của thẻ li thứ 3 biến mất, 
+        khi bỏ chuột ra, nội dung của thẻ 
+li thứ 3 trở lại như ban đầu

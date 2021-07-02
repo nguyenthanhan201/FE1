@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bai 6</title>
+    <style>
+        .number {
+            width: 50px;
+            line-height: 50px;
+            display: inline-block;
+            border-radius: 25px;
+            position: absolute;
+            text-align: center;
+        }
+
+        .orange {
+            background: orange;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .green {
+            background: green
+        }
+
+        .blue {
+            background: blue;
+            color: white
+        }
+
+        .black {
+            background: black;
+            color: white
+        }
+        .timeout{
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            position: fixed;
+            line-height: 800px;
+            display: none;
+            text-align: center;
+            color:white;
+            z-index:100;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="timeout">
+        <h1 id="score">Score: </h1>
+    </div>
+    <button class="start">start</button>
+    <div class="number red">10</div>
+    <div class="number red">10</div>
+    <div class="number blue">5</div>
+    <div class="number blue">5</div>
+    <div class="number green">2</div>
+    <div class="number green">2</div>
+    <div class="number orange">1</div>
+    <div class="number orange">1</div>
+    <div class="number black">0</div>
+    <div class="number black">0</div>
+</body>
+
+<script>
+    //viet ham ngau nhien
+    //viet ham ngau nhien vi tri
+    //ham setTimeOut sau 10 giay se stop game
+    //xet chieu ngang
+    //tao su kien cho number va nut start 
+
+    //lam ham ngau nhien
+    let getRndInterger = (min,max) =>{
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+    const number = document.querySelectorAll('.number');
+    //set vi tri ngau nhien
+    let setPosition = () => {
+        number.forEach((item) => {
+            item.style.left = getRndInterger(0,445) + 'px';
+            item.style.top = getRndInterger(0,557) + 'px';
+        })
+    }
+    let t;
+    let score = 0;
+    const timeout = document.querySelector('.timeout');
+    const score1 = document.querySelector('#score');
+    //viet ham stop game
+    let stopGame = () => {
+        clearInterval(t);
+        timeout.style.display = 'block';
+        score1.innerHTML = score;
+    }
+    const start = document.querySelector('.start');
+    //tao su kien click chuot
+    start.onclick = () => {
+        setPosition();
+        t = setInterval(setPosition,2000);
+        setTimeout(stopGame,5000);
+    }
+    //tao su kien click number
+    number.forEach((item) =>{
+        item.onclick = () =>{
+            score += +item.innerHTML;
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,19 @@
+header{background: #23272a;padding-bottom: 150px}
+.logo img{color:white;padding-left: 95px;padding-top:30px}
+ul{margin-left: 95px;margin-right: 95px;padding-bottom:30px;background: #e44f2b;display:flex;padding-top:30px }
+ul a{color:white;padding-right: 58px;text-decoration: none}
+ul .itemrieng a{color:white;padding-left: 150px}
+.banner h1{color :#e44f2b;padding-left: 95px;}
+.banner p{color:#8fa7ae;margin-left: 95px;}
+.banner img{margin-left: 80px;}
+.content{background: #ebebeb;padding-top:20px;}
+.content h3{background:#23272a;padding-top:20px;padding-left:20px;padding-right:20px;padding-bottom:20px;margin-left: 95px;;margin-right: 95px;margin-bottom:30px;color:white}
+.product{display: flex;margin-left: 95px;}
+.item{margin-right: 70px;padding: 20px;background:white}
+.item img{margin-left: 30px;}
+.item p{margin-left: 5px;color:red}
+.item h2{padding-left:50px;border-bottom:solid 1px #f2f2f2}
+footer{background:#e44f2b;padding-top: 10px;padding-bottom: 10px;padding-left:39%;color:white;display: flex;}
+footer a img{padding-left:400px;}
+.chung {display:flex}
+.chung .computer img{margin-left:276px}

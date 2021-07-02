@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuan 10</title>
+</head>
+<body>
+    <h1 id="title">JavaScript làm được gì?</h1>
+    <ul>
+        <li>Đoạn văn bản thứ nhất </li>
+        <li>Đoạn văn bản thứ 2</li>  
+        <li>Bắt các sự kiện của người dùng</li>
+        <li>Tạo ra các chuyển động, hiệu ứng, game, v.v…</li>     
+    </ul>
+    <script>
+        const title=document.getElementById('title');
+        const li1= document.querySelectorAll('li');
+        title.onclick = () =>{
+            title.innerHTML="toi la an";
+for(let i=0;i<li1.length;i++){
+    li1[i].innerHTML="toi la an";
+}
+        }
+    </script>
+    <script>
+        //cau 1
+        const li1= document.querySelectorAll('li');
+        li1[0].innerHTML = "Thay đổi HTML";
+        //cau 2
+        li1[1].onclick  = () =>{
+         li1[1].innerHTML = "Thay đổi CSS";
+         //cau 3
+         li1[2].onmouseover = () =>{
+             li1[2].innerHTML="Bạn đang rê chuột vào tôi";
+         }
+         li1[2].onmouseout = () =>{
+             li1[2].innerHTML="Bắt các sự kiện của người dùng";
+         }
+         //cau 4
+         li1[3].onmouseover = () =>{
+             li1[2].style.display="none";
+         }
+         li1[3].onmouseout = () =>{
+             li1[2].style.display="block";
+         }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Họ tên | MSSV</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+
+<body>
+    <!-- //1.tao ham ngau nhien
+    //2.tao ham phep toan ngau nhien
+    //3.tao ham 10 hinh tron
+    //4. ham setposition
+    //5. su kien nhan nut start (goi ham 2 va 4) -->
+    <div class="container">
+        <div class="control">
+            <div class="row">
+                <div class="col-2">
+                    <!-- Nút start -->
+                    <button class="btn btn-primary" id="btn-start">Start</button>
+                </div>
+                <div class="col-8">
+                    <!-- Phép toán -->
+                    <div id="operation"></div>
+                </div>
+                <div class="col-2">
+                    <!-- Điểm -->
+                    <h2><span id="score" class="badge badge-pill badge-success">0</span></h2>
+                </div>
+            </div>
+        </div>
+        <!-- Vùng hiển thị hình tròn -->
+        <div id="game">
+            <!-- Div hình tròn mẫu -->
+            <div class="circle">9</div>
+            <div class="circle">10</div>
+        </div>
+    </div>
+</body>
+
+<script>
+//     let getRandomIntInclusive = (min, max) => {
+//     min = Math.ceil(min);
+//     max = Math.floor(max);
+//     return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+// }
+
+//ham ngau nhien
+let getRndInterger = (min, max) => {
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+    let result;
+//ham tao phep toan ngau nhien
+let c = createOperator();
+let createOperator = () =>{
+    let x,y,o;
+    x = getRndInterger(0,99);
+    y = getRndInterger(0,99);
+    let op =['+','-'];
+    o = op[getRndInterger(0,1)];
+    result = eval(x+o+y);
+    return x + o + y;
+}
+const game = document.querySelector('#game');
+let createCircle = () =>{
+    game.insertAdjacentHTML('beforeend','<div class="circle1" style="background:red">'+result+'</div>');
+    for(let i = 0; i<= 9 ; i++){
+        let j = getRndInterger(-99,198);
+        game.insertAdjacentHTML('beforeend','<div class="circle">'+j+'</div>')
+    }
+}
+createCircle();
+//ham tao vi tri ngau nhien
+let setPosition = () =>{
+    let circle = document.querySelectorAll('.circle');
+    let circle1 = document.querySelector('.circle1')
+    circle.forEach((item) =>{
+        item.style.left = getRndInterger(0,1000) + "px";
+        item.style.top = getRndInterger(0,500) + "px";
+    })
+    circle1.style.left = getRndInterger(0,1000) + "px";
+    circle1.style.top = getRndInterger(0,500) + "px"; 
+}
+//tao su kien nut start
+const start = document.querySelector('#btn-start');
+const operation = document.querySelector("#operation");
+start.onclick = () =>{
+    operation.innerHTML = c;
+    createOperator();
+    setPosition();
+    setValue();
+    alert(c);
+}
+//ham thay doi gia tri 10 circle
+let setValue = () =>{
+    let circle = document.querySelectorAll('.circle');
+    circle.forEach((item) =>{
+        let j = getRndInterger(-99,198);
+        item.innerHTML = j;
+    })
+}
+//click chuot len circle
+let circle = document.querySelectorAll('.circle');
+let circle1 = document.querySelector('.circle1');
+let score = document.querySelector('#score');
+let diem = 0;
+
+circle1.onclick = () =>{
+    diem++;
+    score.innerHTML = diem;
+    createOperator();
+    setPosition();
+    setValue();
+}
+circle.forEach((item) =>{
+    item.onclick = () =>{
+        diem--;
+    score.innerHTML = diem;
+    }
+})
+</script>
+</html>

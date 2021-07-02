@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MSSV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<style>
+    body {
+        background: #d4f5f9;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Register Form</h1>
+        <form action="#" method="get" novalidate>
+            <!-- Fullname -->
+            <div class="row gx-3">
+                <label for="fullname" class="form-label">Fullname</label>
+                <input type="text" class="form-control" name="fullname" required pattern="[a-zA-Z0-9]{3,}(\s?[a-zA-Z0-9]+)*">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Toi thieu 3 ki tu khong co cach 2 khoang trang lien tiep</div>
+            </div>
+             <!-- Email -->
+             <div class="row gx-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" class="form-control" name="email" required pattern="[\w._+]+@[\w.-]+\.[a-zA-Z]{2,4}">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Nhap dung dinh dang email</div>
+            </div>
+            <!-- Phone -->
+            <div class="row gx-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" class="form-control" name="phone" required pattern="\d{9,10}">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">SDT tu 9 toi 10 </div>
+            </div>
+            <!-- Password -->
+            <div class="row gx-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="text" class="form-control" id="captchar" required pattern=".{10,}">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Toi thieu 10 ki tu</div>
+            </div>
+            <!-- Repass -->
+            <div class="row gx-3">
+                <label for="repass" class="form-label">Retype Password</label>
+                <input type="text" class="form-control" id="repass" required pattern="" onchange="checkRePass()" >
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Khong giong nhau</div>
+            </div>
+            <!-- Description -->
+            <div class="row gx-3">
+                <label for="desc" class="form-label">Description yourself</label>
+                <textarea class="form-control" name="desc"  maxlength="200" required pattern=".{1,200}"></textarea>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">not more than 200 words or digits</div>
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="checkRePass()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.querySelector('form');
+        form.onsubmit = (e) => {
+            if (form.checkValidity() === false) {
+                //Ngăn ko cho form được gửi đi
+                e.preventDefault();//khong cho gui di
+                e.stopPropagation();//dung han tien trinh
+            }
+            form.classList.add('was-validated');
+        };
+
+
+        //kiem tra giong pass
+        checkRePass = () =>{
+            let password = document.getElementById("captchar").value;     
+            document.getElementById('repass').setAttribute('pattern',password);
+            let repass = document.getElementById('repass').getAttribute('pattern');
+        }
+
+        // const valuePassword = password.value.trim();
+        // const valueRePass = rePassword.value.trim();
+    </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+.mytemplate{background: #df4a4a;color: white;height:200px;}
+.mytemplate a{margin-left:30px;}
+.my center{background: #df4a4a;color: white;height:50px;}
+.about{height:130px;}
+.about h2{color:#7d7977;margin-left:30px;}
+.about a{margin-left:50px;}
+.mytemplate center h1{margin-top:42px}
+.my center{display:flex;justify-content: center;align-items: center}

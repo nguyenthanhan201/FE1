@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .img{
+    animation: quay 1s infinite;
+    }
+    @keyframes quay {
+        0%{
+            transform: rotate(0deg);
+        }
+        50%{
+            transform: rotate(160deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    .null{
+        animation: quay1 1s infinite;
+    }
+    @keyframes quay1 {
+        0%{
+            transform: rotate(0deg);
+        }
+    }
+    .parent{
+        align-items: center;
+        text-align: center;
+    }
+    .img{
+        margin-top: 40px;
+    }
+</style>
+<body>
+    <div class="parent">
+    <h1>Chong Chong</h1>
+    <h3>Tu Quay</h3>
+    <img src="./001-chong-chóng-1-300x300.png" alt="" id="quay1" style="margin: 0 auto;">
+    <h3>Click Vao Hinh Bat/Tat</h3>
+    <img src="./001-chong-chóng-1-300x300.png" alt="" id="quay">
+</div>
+
+    <script>
+        let quay=document.getElementById('quay');
+        let quay1=document.getElementById('quay1');
+        //them class cho quay1
+        quay1.classList.add('img');
+        //them addEven
+        quay.addEventListener('click', () => {
+            if(quay.classList.contains('img')==false){
+                quay.classList.remove('null');
+            quay.classList.add('img');
+            }
+            else{
+                quay.classList.remove('img');
+                quay.classList.add('null');
+            }
+        });
+    </script>
+</body>
+</html>

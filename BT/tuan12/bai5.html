@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai5</title>
+</head>
+<style>
+    .circle {
+        background: turquoise;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        display: inline-block;
+    }
+
+    .red {
+        background: red;
+    }
+
+    .black {
+        background: turquoise;
+    }
+
+    .blue {
+        background: blue;
+    }
+    .yellow{
+        background: yellow;
+    }
+</style>
+
+<body>
+    <script>
+        //ham tao 100 hinh
+        let createCircle = () => {
+            for (let i = 0; i < 108; i++) {
+                document.body.insertAdjacentHTML("beforeend", "<div class='circle'></div>");
+            }
+        }
+        createCircle();
+        //tao mang mau
+        const colors = ['red','sea','blue','yellow'];
+
+        //ham ngau nhien
+        let getRndInteger = (min, max) => {
+            return Math.floor(Math.random() * (max - min)) + min;
+        };
+        // const randomColor = colors[Math.floor(Math.random()*colors.length)];
+
+        //set mau cho circle
+        let setColor = () => {
+            let circles = document.querySelectorAll('.circle');
+            circles.forEach((item) => {
+                item.classList.add(colors[getRndInteger(0, colors.length)]);
+                item.classList.remove(colors[getRndInteger(0, colors.length)]);
+            })
+        }
+        setInterval(setColor,1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bai 7</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.2/p5.min.js" type="text/javascript"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .number {
+            width: 50px;
+            line-height: 50px;
+            display: inline-block;
+            border-radius: 25px;
+            position: absolute;
+            text-align: center;
+            color: black;
+            border: 1px black solid;
+        }
+
+        .timeout {
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            position: fixed;
+            line-height: 800px;
+            display: none;
+            text-align: center;
+            color: white;
+            z-index: 100;
+        }
+
+        .black {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="timeout">
+        <h1 id="score">Score: </h1>
+    </div>
+    <button class="start">start</button>
+</body>
+
+<script>
+    //ham ngau nhien
+    let getRndInterger = (min, max) => {
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+    //ham tao 100 con so
+    let createNumber = () => {
+        for (let i = 0; i <= 100; i++) {
+            document.body.insertAdjacentHTML("afterend", "<div class='number'>" + i + "</div>");
+        }
+    }
+    //set vi tri ngau nhien
+    let setPosition = () => {
+        const numbers = document.querySelectorAll('.number');
+        numbers.forEach((item) => {
+            let x = getRndInterger(0, 1200);
+            let y = getRndInterger(0, 577);
+
+            item.style.left = x + 'px';
+            item.style.top = y + 'px'; 
+        })
+    }
+    //tao ham dung game
+    let score = 0;
+    const timeout = document.querySelector('.timeout');
+    const score1 = document.querySelector('#score');
+    let stopGame = () => {
+        timeout.style.display = 'block';
+        score1.innerHTML = score;
+    }
+    //tao 100 so
+    const start = document.querySelector('.start');
+    start.onclick = () => {
+        createNumber();
+        setPosition();
+        setTimeout(stopGame, 60000);
+        //tao su kien cho nut 
+        const number = document.querySelectorAll('.number');
+        let index = 0;
+        number.forEach((item) => {
+            item.onclick = () => {
+                if (item.innerHTML == index) {
+                    item.classList.add('black');
+                    index++;
+                    score++;
+                }
+            }
+        })
+
+    }
+</script>
+
+</html>

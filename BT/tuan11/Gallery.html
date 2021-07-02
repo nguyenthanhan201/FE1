@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+</head>
+<style>
+    img {
+        margin-top: 20px;
+        width: 100px;
+        height: 100px;
+        box-shadow: rgb(0 0 0) 0px 5px 15px;
+        }
+    .images {
+        text-align: center;
+    }
+    #result {
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        text-align: center;
+        box-shadow: rgb(0 0 0) 0px 5px 15px;
+        align-content: center;
+        position: relative;
+    }
+    .themanh{
+        background-image: url(./1.png);
+    }
+</style>
+
+<body>
+    <div id="result">
+        <p style="top: 42%;left: 38%;position: absolute;">Click Hinh</p>
+    </div>
+    <div class="images">
+        <img src="./1.png" alt="" onclick="update(this)">
+        <img src="./2.jpeg" alt="" onclick="update(this)">
+        <img src="./3.jpg" alt="" onclick="update(this)">
+    </div>
+
+    <script>
+
+        let result = document.getElementById('result');
+        result.classList.add('themanh');
+
+        //chuc nang click anh
+        update = (previewPic) => {
+            // lay gia tri src va alt cua anh
+            let src = previewPic.src;
+            //gan url vao #result
+            document.getElementById('result').style.backgroundImage = "url(" + src + ")";
+        }
+    </script>
+</body>
+
+</html>
